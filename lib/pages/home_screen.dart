@@ -69,6 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Text('1 '+value.shopItem[index][1]+':'+value.shopItem[index][2]+' Rs',),
                         SizedBox(height: 5,),
                         ElevatedButton(onPressed: (){
+                          value.toastmsg('Item Added');
                          value.addCardItems(index);
                         }, child: Text('Add to Cart')),
                         SizedBox(height: 5,),

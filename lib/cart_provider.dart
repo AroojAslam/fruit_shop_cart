@@ -1,6 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class CartProvider with ChangeNotifier {
+  toastmsg(
+      String message,
+      ){
+    return Fluttertoast.showToast(
+        msg: message,
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.BOTTOM,
+        timeInSecForIosWeb: 1,
+        backgroundColor: Colors.pink.shade700,
+        textColor: Colors.white,
+        fontSize: 16.0
+    );
+  }
 
   final List _items=[
     ['Apple','KG','70','https://png.monster/wp-content/uploads/2022/02/png.monster-206.png',Colors.red.shade900.withOpacity(0.1),'1'],
@@ -52,7 +66,7 @@ class CartProvider with ChangeNotifier {
     int currentQuantity = int.parse(_cartItems[index][5]);
     int newQuantity = currentQuantity + amount;
 
-    if (newQuantity >= 0) {
+    if (newQuantity > 0) {
       _cartItems[index][5] = newQuantity.toString();
       notifyListeners();
     }

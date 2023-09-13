@@ -92,6 +92,7 @@ class _CartScreenState extends State<CartScreen> {
                             child: Align(
                               alignment: Alignment.centerRight,
                              child:  IconButton(onPressed: () {
+
                                value.removeCardItems(index);
                              },icon: Icon(Icons.cancel,color: Theme.of(context).primaryColor.withOpacity(0.6),)),
                             ),
