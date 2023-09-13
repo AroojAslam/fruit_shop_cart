@@ -30,30 +30,65 @@ class _CartScreenState extends State<CartScreen> {
                   itemCount: value.cartItems.length,
                   itemBuilder: (context, index) {
                   return Container(
-                    margin: EdgeInsets.only(top: 10),
+                    padding: EdgeInsets.all(15),
+                    margin: EdgeInsets.only(top: 10,left: 15,right: 15),
                     decoration: BoxDecoration(
                       color: value.cartItems[index][4],
                         borderRadius: BorderRadius.circular(20)
                     ),
                     child:Row(
                       children: [
-                        SizedBox(width: 20,),
+
                         Image(
                             height:80,
                             width: 80,
                             image: NetworkImage(value.cartItems[index][3])),
-                      SizedBox(width: 20,),
-                       Column(
-                         crossAxisAlignment: CrossAxisAlignment.start,
-                         children: [
-                           Text(value.cartItems[index][0],style: TextStyle(fontWeight: FontWeight.w600,fontSize: 16)),
-                           Text('1 '+value.cartItems[index][1],),
-                           Text(value.cartItems[index][2]+' Rs'),
-                         ],
+                      SizedBox(width: 10,),
+                       Container(
+                         width: 90,
+
+                         child: Column(
+                           crossAxisAlignment: CrossAxisAlignment.start,
+                           children: [
+                             Text(value.cartItems[index][0],style: TextStyle(fontWeight: FontWeight.w600,fontSize: 16)),
+                             Text('1 '+value.cartItems[index][1],),
+                             Text(value.cartItems[index][2]+' Rs'),
+                           ],
+                         ),
                        ),
+                        Container(
+                          margin: EdgeInsets.only(top: 15,bottom: 15,),
+                          decoration: BoxDecoration(
+                            color: Colors.white
+                          ),
+                          child: Row(
+                            children: [
+                              Container(
+                                height: 35,
+                                width: 35,
+                                child: TextButton(
+                                  onPressed: () {
+                                    value.updateItemQuantity(index, 1);
+                                  },
+                                  child: Text('+'),
+                                ),
+                              ),
+                              Text(value.updateItemQuantity(index, 0).toString()),
+                             Container(
+                                 height: 35,
+                                 width: 35,
+                               child:  TextButton(
+                                   onPressed: (){
+                                     value.updateItemQuantity(index, -1);
+                                   }, child: Text('-')),
+                             ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(width: 5,),
                         Expanded(
                           child: Padding(
-                            padding: const EdgeInsets.only(right: 20),
+                            padding: const EdgeInsets.only(right: 15),
                             child: Align(
                               alignment: Alignment.centerRight,
                              child:  IconButton(onPressed: () {
