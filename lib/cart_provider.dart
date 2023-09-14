@@ -47,6 +47,7 @@ class CartProvider with ChangeNotifier {
   }
 
   void removeCardItems(int index){
+   _cartItems[index][5]='1';
     _cartItems.removeAt(index);
     notifyListeners();
   }
