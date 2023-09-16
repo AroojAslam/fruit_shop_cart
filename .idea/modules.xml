@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/shopping_cart.iml" filepath="$PROJECT_DIR$/shopping_cart.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fruit_shop_cart.iml" filepath="$PROJECT_DIR$/fruit_shop_cart.iml" />
       <module fileurl="file://$PROJECT_DIR$/android/shopping_cart_android.iml" filepath="$PROJECT_DIR$/android/shopping_cart_android.iml" />
     </modules>
   </component>
